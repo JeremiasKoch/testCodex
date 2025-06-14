@@ -3,7 +3,7 @@ import { fetchEpisodes } from '../api/axiosConfig'
 import EpisodeCard from '../components/EpisodeCard'
 
 const Dashboard = () => {
-  const [episodes, setEpisodes] = useState([])
+  const [episodes, setEpisodes] = useState<any[]>([])
 
   useEffect(() => {
     const loadEpisodes = async () => {

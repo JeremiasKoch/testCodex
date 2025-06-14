@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router'
 import { fetchEpisode } from '../api/axiosConfig'
 import EpisodeCard from '../components/EpisodeCard'
 
 const EpisodeDetail = () => {
-  const { id } = useParams()
-  const [episode, setEpisode] = useState(null)
+  const { id } = useParams<{ id: string }>()
+  const [episode, setEpisode] = useState<any | null>(null)
 
   useEffect(() => {
     const loadEpisode = async () => {
@@ -29,7 +29,7 @@ const EpisodeDetail = () => {
         <p><strong>Created:</strong> {episode.created}</p>
         <p><strong>Characters:</strong></p>
         <ul className="list-disc pl-5">
-          {episode.characters.map((charUrl) => {
+          {episode.characters.map((charUrl: string) => {
             const charId = charUrl.split('/').pop()
             return (
               <li key={charUrl}>

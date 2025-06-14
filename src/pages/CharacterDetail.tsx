@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router'
 import { fetchCharacter } from '../api/axiosConfig'
 
 const CharacterDetail = () => {
-  const { id } = useParams()
-  const [character, setCharacter] = useState(null)
+  const { id } = useParams<{ id: string }>()
+  const [character, setCharacter] = useState<any | null>(null)
 
   useEffect(() => {
     const loadCharacter = async () => {

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 import { searchCharacters } from '../api/axiosConfig'
 
 const Header = () => {
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
 
-  const handleSearch = async (e) => {
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!query) return
     try {
