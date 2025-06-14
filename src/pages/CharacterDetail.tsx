@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { Link, useParams } from 'react-router'
 import { fetchCharacter } from '../api/axiosConfig'
 
 const CharacterDetail = () => {
@@ -22,6 +22,12 @@ const CharacterDetail = () => {
 
   return (
     <div className="p-4">
+      <Link
+        to="/"
+        className="inline-block mb-4 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
+      >
+        Home
+      </Link>
       <h2 className="text-xl font-bold">{character.name}</h2>
       <img src={character.image} alt={character.name} className="my-4" />
       <p><strong>Status:</strong> {character.status}</p>

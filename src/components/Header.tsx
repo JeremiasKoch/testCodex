@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { searchCharacters } from '../api/axiosConfig'
 
 const Header = () => {
@@ -21,8 +21,16 @@ const Header = () => {
   }
 
   return (
-    <header className="p-4 bg-gray-800 text-white flex items-center">
-      <h1 className="text-xl font-bold mr-4">Rick and Morty</h1>
+    <header className="p-4 bg-gradient-to-r from-blue-600 to-blue-400 text-white flex flex-wrap items-center justify-between">
+      <div className="flex items-center space-x-4 mb-2 sm:mb-0">
+        <h1 className="text-xl font-bold">Rick and Morty</h1>
+        <Link
+          to="/"
+          className="px-3 py-1 bg-blue-800 rounded hover:bg-blue-700"
+        >
+          Home
+        </Link>
+      </div>
       <form onSubmit={handleSearch} className="flex">
         <input
           value={query}
