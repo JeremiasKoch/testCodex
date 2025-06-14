@@ -23,6 +23,12 @@ const EpisodeDetail = () => {
 
   return (
     <div className="p-4">
+      <Link
+        to="/"
+        className="inline-block mb-4 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
+      >
+        Home
+      </Link>
       <EpisodeCard episode={episode} />
       <div className="mt-4">
         <p><strong>Air Date:</strong> {episode.air_date}</p>
